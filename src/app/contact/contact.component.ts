@@ -30,8 +30,6 @@ export class ContactComponent implements OnInit {
   public submit(): void {
     this.processing = this.submitted = true;
 
-    console.log("submitting blog post: " + JSON.stringify(this.post));
-
     this.contactFormService.sendMail(this.mail).subscribe(
       // response => console.log('response on new post: ' + JSON.stringify(response))
       response => {

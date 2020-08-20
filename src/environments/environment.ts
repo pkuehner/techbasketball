@@ -8,6 +8,7 @@ export const environment = {
     base: "http://localhost:3000/",
     entries: "entries",
     mail: "sendmail",
+    authenticate: "authenticate"
   }
 };
 

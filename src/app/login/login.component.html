@@ -1,0 +1,11 @@
+<!-- Main Content -->
+<div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+        <input type="text" [(ngModel)]="userEmail" name="email" class="form-control"
+               placeholder="Mail">
+                    <input type="password" [(ngModel)]="userPassword" name="pw" class="form-control"
+                           placeholder="Password">
+        <button class="btn btn-secondary" (click)="login();">Submit</button>
+
+    </div>
+</div>

@@ -32,6 +32,7 @@ export class AuthorPostComponent implements OnInit {
     let post = this.post;
 
     fileReader.onload = function (fileLoadedEvent) {
+      // @ts-ignore
       var srcData = fileLoadedEvent.target.result; // <--- data: base64
 
       var newImage = document.createElement('img');

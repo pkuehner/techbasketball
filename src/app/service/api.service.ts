@@ -15,7 +15,7 @@ export class ApiService {
 
   public Get(endpoint: string): Observable<any> {
     return this.http
-      .get(API_URL + endpoint)
+      .get(API_URL + endpoint, {withCredentials: true})
       .pipe(
         map(response => {
           var json = response.json();
@@ -27,14 +27,15 @@ export class ApiService {
 
   public Post(endpoint: string, data: any): Observable<any> {
     console.log(API_URL + endpoint)
+    console.log(localStorage.getItem('userInfo'));
     return this.http
-      .post(API_URL + endpoint, data)
+      .post(API_URL + endpoint, data, {withCredentials: true})
       .pipe(catchError(this.handleError));
   }
 
   public Delete(endpoint: string) {
     return this.http
-      .delete(API_URL + endpoint)
+      .delete(API_URL + endpoint,{withCredentials: true})
       .pipe(catchError(this.handleError));
   }
 
