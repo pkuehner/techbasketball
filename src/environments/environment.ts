@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   api: {
-    base: "http://localhost:3000/",
+    base: "http://ec2-100-25-46-122.compute-1.amazonaws.com:4200/",
     entries: "entries",
     mail: "sendmail",
     authenticate: "authenticate"
