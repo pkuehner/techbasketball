@@ -1,6 +1,25 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const path = require('path');
+
+const PORT = 4200;
+
+const STATIC = path.resolve(__dirname, 'dist/angular-blog-clean');
+const INDEX = path.resolve(STATIC, 'index.html');
+
+
 const app = express();
+app.use(bodyParser.json());
 
-app.use(express.static('./dist/angular-blog-clean'));
+// Static content
+app.use(express.static(STATIC));
 
-app.listen(4200, () => console.log('Gator app listening on port 4200!'));
+// All GET request handled by INDEX file
+app.get('*', function (req, res) {
+  res.sendFile(INDEX);
+});
+
+// Start server
+app.listen(PORT, function () {
+  console.log('Server up and running on ', `http://localhost:${PORT}/`);
+});
