@@ -5,6 +5,7 @@ export class BlogPost {
     title: string;
     author: string;
     Created_date: string;
+    preview: string;
     file: any;
 
     //assign vals from json to properties

@@ -26,6 +26,14 @@
                               placeholder="Content"></textarea>
                 </div>
             </div>
+            <div class="control-group">
+                <div class="form-group">
+                    <label>Preview</label>
+                    <textarea rows="5" [(ngModel)]="post.preview" [disabled]="processing" name="content"
+                              class="form-control"
+                              placeholder="Preview"></textarea>
+                </div>
+            </div>
             <div id="imgTest"></div>
             <br>
             <app-loading *ngIf="processing && (!success && !failure)"></app-loading>
@@ -40,47 +48,17 @@
             </div>
           <form [formGroup]="myForm" (ngSubmit)="submit()">
 
-
-
-            <div class="form-group">
-
-              <label for="name">Name</label>
-
-              <input
-
-                      formControlName="name"
-
-                      id="name"
-
-                      type="text"
-
-                      class="form-control">
-
-              <div *ngIf="f.name.touched && f.name.invalid" class="alert alert-danger">
-
-                <div *ngIf="f.name.errors.required">Name is required.</div>
-
-                <div *ngIf="f.name.errors.minlength">Name should be 3 character.</div>
-
-              </div>
-
-            </div>
-
-
-
             <div class="form-group">
 
               <label for="file">File</label>
 
-              <input
+              <input class="form-control"
 
                       formControlName="file"
 
                       id="file"
 
                       type="file"
-
-                      class="form-control"
 
                       multiple=""
 
