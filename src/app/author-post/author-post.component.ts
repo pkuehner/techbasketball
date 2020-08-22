@@ -66,14 +66,14 @@ export class AuthorPostComponent implements OnInit {
                 reader.readAsDataURL(event.target.files[i]);
 
             }
-            this.post.file = this.myForm.value;
         }
 
     }
 
     public submit(): void {
         this.processing = this.submitted = true;
-        this.post.file = '<img class = "img-responsive" src="' + this.myForm.value.fileSource[0] + '" >';
+        this.post.file = this.myForm.value.fileSource;
+
         console.log('submitting blog post: ' + JSON.stringify(this.post));
 
         this.postService.CreatePost(this.post).subscribe(
