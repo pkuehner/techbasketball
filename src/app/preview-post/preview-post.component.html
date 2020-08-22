@@ -2,8 +2,8 @@
   <a (click)="go()" class="pointer">
     <h2 class="post-title" [textContent]="post.title">
     </h2>
-    <h3 class="post-subtitle">{{ post.content.length > 48 ? post.content.substring(0, 50)+"..." : post.content }}
-    </h3>
+    <p class="post-subtitle">{{ post.preview }}
+    </p>
   </a>
   <p class=" post-meta">Posted by
     <a href="#" [textContent]="post.author"></a>
