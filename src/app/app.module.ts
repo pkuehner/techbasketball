@@ -19,6 +19,7 @@ import { AuthorPostComponent } from "./author-post/author-post.component";
 import { LoadingComponent } from "./loading/loading.component";
 import { LoginComponent } from "./login/login.component";
 import {HttpClientModule} from '@angular/common/http';
+import {ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserAnimationsModule,
     HttpModule,
     FormsModule,
+      ReactiveFormsModule,
     AppRoutingModule,
       HttpClientModule
   ],
